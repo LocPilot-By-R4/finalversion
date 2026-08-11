@@ -1,0 +1,15 @@
+CHARTE GRAPHIQUE OFFICIELLE LOCPILOT
+
+Bleu nuit principal : #07111F
+Bleu nuit secondaire : #0B1627
+Or / bronze principal : #B08040
+Or foncé : #9A6D34
+Or clair : #D6B07A
+Bleu accent : #1466B8
+Bleu accent foncé : #0F4E8A
+Texte principal : #0F172A
+Texte secondaire / gris : #64748B
+Bordures : #E2E8F0
+Fond clair : #FFFFFF
+
+V6 : palette appliquée à la plateforme voyageurs, aux pages de rubrique, au simulateur et au gestionnaire de cookies.

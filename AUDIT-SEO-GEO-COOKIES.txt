@@ -1,0 +1,16 @@
+HTML pages: 85
+analytics_script: 85/85
+canonical: 85/85
+consent_banner: 85/85
+consent_modal: 85/85
+consent_script: 85/85
+description: 85/85
+jsonld: 85/85
+og_description: 85/85
+og_image: 85/85
+og_title: 85/85
+robots: 85/85
+title: 85/85
+twitter_description: 85/85
+Duplicate descriptions: 0
+Duplicate titles: 0

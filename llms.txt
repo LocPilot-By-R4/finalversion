@@ -1,0 +1,35 @@
+# LocPilot by R4
+
+LocPilot is a multilingual travel discovery platform and property-management ecosystem operated by R4 Consulting.
+
+## Core principles
+- Search by destination, activity and travel experience.
+- Accommodation results are not commercially promoted: ranking is intended to follow traveler search relevance.
+- Booking channels are identified clearly: official direct website, LocPilot partner, or partner platform.
+- Traveler-facing content is available in French, English and Spanish.
+
+## Key traveler pages
+- https://locpilotbyr4.fr/
+- https://locpilotbyr4.fr/hebergements/
+- https://locpilotbyr4.fr/activites/
+- https://locpilotbyr4.fr/destinations/
+- https://locpilotbyr4.fr/experiences/
+- https://locpilotbyr4.fr/reservation-directe/
+
+## Main destinations
+- Saint-Lary-Soulan
+- Loudenvielle
+- La Mongie
+- Cauterets
+- Luz-Saint-Sauveur
+- Peyragudes
+- Piau-Engaly
+- Val Louron
+
+## Owner resources
+- https://locpilotbyr4.fr/proprietaires/
+- https://locpilotbyr4.fr/simulateur/
+
+## Contact
+- https://locpilotbyr4.fr/a-propos/
+- mailto:contact@locpilotbyr4.fr

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<title>Simulateur OTA vs direct | Comparer les frais de réservation | LocPilot</title>
+<meta content="Comparez le coût d’une réservation via une OTA avec un tarif direct cohérent. Le simulateur LocPilot aide les propriétaires à visualiser commissions, prix voyageur et revenu net." name="description"/>
+<link href="https://locpilotbyr4.fr/simulateur/" rel="canonical"/>
+<meta content="LocPilot by R4" property="og:site_name"/>
+<meta content="https://locpilotbyr4.fr/simulateur/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Simulateur OTA vs direct | Comparer les frais de réservation | LocPilot" name="twitter:title"/>
+<meta content="Comparez le coût d’une réservation via une OTA avec un tarif direct cohérent. Le simulateur LocPilot aide les propriétaires à visualiser commissions, prix voyageur et revenu net." name="twitter:description"/>
+<meta content="https://locpilotbyr4.fr/simulateur/og-locpilot-simulateur.png" name="twitter:image"/>
+<meta content="Simulateur OTA vs direct | Comparer les frais de réservation | LocPilot" property="og:title"/>
+<meta content="Comparez le coût d’une réservation via une OTA avec un tarif direct cohérent. Le simulateur LocPilot aide les propriétaires à visualiser commissions, prix voyageur et revenu net." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://locpilotbyr4.fr/simulateur/og-locpilot-simulateur.png" property="og:image"/>
+<link href="logo.jpg" rel="icon"/>
+<style>
+    :root{
+      --navy:#07111F;--navy-2:#0B1627;--navy-3:#0B1627;--gold:#B08040;--gold-dark:#9A6D34;--gold-2:#D6B07A;--blue:#1466B8;--blue-dark:#0F4E8A;--cream:#FFFFFF;--cream-2:#FFFFFF;--white:#FFFFFF;--ink:#0F172A;--muted:#64748B;--line:#E2E8F0;--green:#0f7a4a;--red:#b42318;--shadow:0 26px 80px rgba(7,17,31,.13);--soft-shadow:0 14px 38px rgba(7,17,31,.08);--radius:28px;--radius-lg:36px;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:radial-gradient(circle at top left,rgba(176,128,64,.16),transparent 30%),linear-gradient(180deg,#FFFFFF 0%,#FFFFFF 55%,#FFFFFF 100%);color:var(--ink)}
+    a{color:inherit}.container{width:min(1180px,calc(100% - 36px));margin:0 auto}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .topbar{position:sticky;top:0;z-index:60;background:rgba(251,248,242,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(7,17,31,.08)}.topbar-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:13px;text-decoration:none}.brand img{width:48px;height:48px;border-radius:16px;object-fit:cover;box-shadow:0 10px 30px rgba(7,17,31,.18)}.brand b{display:block;color:var(--navy);letter-spacing:-.03em;font-size:16px}.brand span{display:block;color:var(--muted);font-size:12px;margin-top:2px}.nav-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.lang-switch{display:flex;align-items:center;gap:5px;border:1px solid rgba(7,17,31,.10);background:rgba(255,255,255,.75);box-shadow:0 10px 28px rgba(7,17,31,.06);border-radius:999px;padding:4px}.lang-btn{border:0;background:transparent;border-radius:999px;padding:8px 10px;cursor:pointer;font-size:18px;line-height:1;display:inline-flex;gap:5px;align-items:center;opacity:.62;transition:.18s ease}.lang-btn small{font-size:10px;font-weight:950;color:#64748B}.lang-btn[aria-pressed="true"]{background:var(--navy);opacity:1;box-shadow:0 10px 25px rgba(7,17,31,.20)}.lang-btn[aria-pressed="true"] small{color:#fff}.btn{border:0;border-radius:999px;padding:13px 18px;font-weight:950;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:.18s ease;white-space:nowrap}.btn:hover{transform:translateY(-1px)}.btn-primary{background:linear-gradient(135deg,#B08040,var(--gold-2));color:#fff;box-shadow:0 16px 36px rgba(176,128,64,.28)}.btn-dark{background:var(--navy);color:#fff;box-shadow:0 16px 38px rgba(7,17,31,.18)}.btn-light{background:#fff;color:var(--navy);border:1px solid var(--line)}.btn-ghost{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);color:#fff}.btn.full{width:100%}
+    .hero{padding:62px 0 34px;position:relative}.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:26px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid rgba(176,128,64,.20);box-shadow:0 12px 34px rgba(7,17,31,.06);border-radius:999px;color:#875b26;font-size:12px;font-weight:950;letter-spacing:.06em;text-transform:uppercase;padding:8px 12px}.eyebrow:before{content:"";width:8px;height:8px;border-radius:999px;background:var(--gold);box-shadow:0 0 0 6px rgba(176,128,64,.13)}.hero h1{font-size:clamp(40px,6vw,74px);line-height:.94;margin:18px 0 18px;letter-spacing:-.075em;color:var(--navy);max-width:760px}.hero h1 em{font-style:normal;color:var(--gold)}.lead{font-size:18px;line-height:1.66;color:#64748B;max-width:720px;margin:0 0 26px}.hero-cta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.trust-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.trust-pill{background:rgba(255,255,255,.72);border:1px solid rgba(7,17,31,.08);border-radius:999px;padding:9px 12px;color:#64748B;font-size:12px;font-weight:850}.visual-card{position:relative;background:linear-gradient(145deg,var(--navy) 0%,#0B1627 56%,#0B1627 100%);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:28px;color:#fff;overflow:hidden;min-height:430px}.visual-card:before{content:"";position:absolute;inset:-160px -120px auto auto;width:340px;height:340px;background:radial-gradient(circle,rgba(176,128,64,.55),transparent 65%)}.visual-card:after{content:"";position:absolute;inset:auto auto -140px -120px;width:300px;height:300px;background:radial-gradient(circle,rgba(255,255,255,.12),transparent 65%)}.visual-top{position:relative;display:flex;justify-content:space-between;gap:14px;align-items:flex-start}.visual-kicker{font-size:12px;text-transform:uppercase;letter-spacing:.09em;font-weight:950;color:var(--gold-2)}.visual-title{font-size:25px;font-weight:950;letter-spacing:-.04em;line-height:1.08;margin-top:7px;max-width:320px}.mini-badge{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:9px 12px;font-weight:950;font-size:12px;color:rgba(255,255,255,.84)}.journey{position:relative;margin-top:28px;display:grid;gap:12px}.journey-item{display:grid;grid-template-columns:48px 1fr;gap:13px;align-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);border-radius:22px;padding:14px}.journey-item strong{display:block;font-size:15px;color:#fff}.journey-item small{display:block;color:rgba(255,255,255,.64);line-height:1.42;margin-top:3px}.journey-icon{width:48px;height:48px;border-radius:18px;display:grid;place-items:center;background:rgba(176,128,64,.18);color:var(--gold-2);font-weight:950}.visual-bottom{position:relative;margin-top:22px;border:1px solid rgba(231,194,131,.25);background:rgba(176,128,64,.12);border-radius:22px;padding:16px;line-height:1.55;color:rgba(255,255,255,.76);font-size:14px}.visual-bottom b{color:#fff}
+    .app{padding:26px 0 36px}.app-shell{display:grid;grid-template-columns:minmax(0,.92fr) minmax(380px,1.08fr);gap:24px;align-items:start}.panel,.result-card,.audit-card{background:rgba(255,255,255,.88);backdrop-filter:blur(8px);border:1px solid rgba(7,17,31,.10);border-radius:var(--radius-lg);box-shadow:var(--shadow)}.panel{overflow:hidden}.panel-head{padding:24px 24px 0}.section-title{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.section-title h2{margin:0;font-size:27px;letter-spacing:-.045em;color:var(--navy)}.section-title p{margin:7px 0 0;color:#64748B;line-height:1.5}.tag{display:inline-flex;align-items:center;gap:6px;background:rgba(176,128,64,.08);color:#9A6D34;border:1px solid rgba(176,128,64,.22);border-radius:999px;padding:8px 11px;font-size:12px;font-weight:950;white-space:nowrap}.steps{padding:18px 18px 22px;display:grid;gap:14px}.step-card{background:#fff;border:1px solid rgba(7,17,31,.09);border-radius:26px;padding:18px;box-shadow:0 12px 30px rgba(7,17,31,.045)}.step-label{display:flex;align-items:center;gap:9px;margin-bottom:14px}.step-number{width:32px;height:32px;border-radius:12px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:950;font-size:13px}.step-label b{font-size:15px;color:var(--navy);letter-spacing:-.01em}.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:grid;gap:7px}.field label{font-size:12px;font-weight:950;color:#0F172A}.input-wrap{display:flex;align-items:center;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:18px;overflow:hidden;transition:.15s ease}.input-wrap:focus-within{border-color:rgba(176,128,64,.65);box-shadow:0 0 0 4px rgba(176,128,64,.10);background:#fff}.input-wrap input,.input-wrap select{width:100%;border:0;background:transparent;padding:15px 14px;font:inherit;font-weight:850;color:var(--navy);outline:0}.input-wrap textarea{width:100%;min-height:128px;border:0;background:transparent;padding:15px 14px;font:inherit;font-weight:650;color:var(--navy);outline:0;resize:vertical;display:block;line-height:1.45}.input-wrap:has(textarea){align-items:stretch}.input-wrap span{padding:0 14px;color:#64748B;font-weight:950}.platform-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.platform-card{appearance:none;text-align:left;border:1px solid #E2E8F0;background:#fff;border-radius:22px;padding:16px;cursor:pointer;transition:.18s ease;min-height:102px}.platform-card:hover{transform:translateY(-1px);box-shadow:0 14px 32px rgba(7,17,31,.08)}.platform-card[aria-pressed="true"]{border-color:rgba(176,128,64,.80);background:linear-gradient(180deg,#FFFFFF,#fff);box-shadow:0 18px 36px rgba(176,128,64,.16)}.platform-card b{display:block;font-size:17px;color:var(--navy);letter-spacing:-.025em}.platform-card span{display:block;color:#64748B;line-height:1.4;font-size:12px;margin-top:6px}.strategy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.strategy-card{border:1px solid #E2E8F0;background:#fff;border-radius:20px;text-align:left;padding:14px;cursor:pointer;transition:.18s ease}.strategy-card b{display:block;color:var(--navy);font-size:14px}.strategy-card span{display:block;color:#64748B;margin-top:5px;font-size:12px;line-height:1.35}.strategy-card[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);box-shadow:0 14px 34px rgba(7,17,31,.18)}.strategy-card[aria-pressed="true"] b{color:#fff}.strategy-card[aria-pressed="true"] span{color:rgba(255,255,255,.68)}.strategy-help{margin-top:12px;border:1px solid rgba(176,128,64,.20);background:rgba(176,128,64,.06);border-radius:18px;padding:13px 14px;color:#9A6D34;font-size:13px;line-height:1.46}.actions-row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:0 18px 22px}.advanced{margin:0 18px 22px;border:1px solid rgba(7,17,31,.08);border-radius:22px;background:#FFFFFF;overflow:hidden}summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:950;color:var(--navy);display:flex;justify-content:space-between;gap:12px}summary::-webkit-details-marker{display:none}.advanced-body{padding:0 18px 18px}.hint{margin-top:12px;border-radius:18px;background:#fff;border:1px solid rgba(7,17,31,.08);padding:13px;color:#64748B;line-height:1.48;font-size:13px}.hint b{color:var(--navy)}
+    .result-wrap{position:sticky;top:94px}.result-card{overflow:hidden}.result-idle{padding:28px;background:linear-gradient(145deg,var(--navy),var(--navy-3));color:#fff;min-height:420px;display:grid;align-content:center;text-align:center;position:relative;overflow:hidden}.result-idle:before{content:"";position:absolute;inset:-140px -90px auto auto;width:280px;height:280px;background:radial-gradient(circle,rgba(176,128,64,.52),transparent 65%)}.idle-icon{position:relative;width:74px;height:74px;margin:0 auto 18px;border-radius:26px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);display:grid;place-items:center;font-size:30px}.result-idle h2{position:relative;margin:0;font-size:28px;letter-spacing:-.05em}.result-idle p{position:relative;color:rgba(255,255,255,.68);line-height:1.58;max-width:430px;margin:12px auto 0}.result-active{display:none}.result-ready .result-idle{display:none}.result-ready .result-active{display:block}.result-hero{background:linear-gradient(145deg,var(--navy),var(--navy-2));color:#fff;padding:26px;position:relative;overflow:hidden}.result-hero:before{content:"";position:absolute;inset:-120px -70px auto auto;width:260px;height:260px;background:radial-gradient(circle,rgba(176,128,64,.56),transparent 66%)}.result-badge{position:relative;display:inline-flex;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);padding:7px 10px;border-radius:999px;color:var(--gold-2);font-size:12px;font-weight:950}.result-hero h2{position:relative;margin:12px 0 6px;font-size:25px;line-height:1.1;letter-spacing:-.045em}.direct-price{position:relative;font-size:clamp(58px,8vw,86px);font-weight:950;letter-spacing:-.075em;line-height:.93;color:var(--gold-2);margin:16px 0 8px}.result-subtitle{position:relative;color:rgba(255,255,255,.72);line-height:1.5;margin:0}.result-body{padding:22px}.metric-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.metric{border:1px solid rgba(7,17,31,.09);border-radius:22px;background:#fff;padding:16px}.metric span{display:block;text-transform:uppercase;letter-spacing:.065em;color:#64748B;font-size:11px;font-weight:950}.metric b{display:block;color:var(--navy);font-size:25px;letter-spacing:-.045em;margin-top:6px}.metric.good{background:#f0faf4;border-color:rgba(15,122,74,.16)}.metric.good b{color:var(--green)}.metric.gold{background:rgba(176,128,64,.06);border-color:rgba(176,128,64,.20)}.metric.gold b{color:#8a5b21}.flow-result{margin-top:14px;border:1px solid rgba(7,17,31,.09);border-radius:24px;background:#FFFFFF;padding:16px}.flow-line{display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr;gap:9px;align-items:stretch}.flow-box{border-radius:18px;background:#fff;border:1px solid rgba(7,17,31,.08);padding:13px}.flow-box span{display:block;color:#64748B;font-size:11px;font-weight:950;text-transform:uppercase;letter-spacing:.06em}.flow-box b{display:block;color:var(--navy);font-size:20px;letter-spacing:-.035em;margin-top:5px}.flow-arrow{display:grid;place-items:center;color:var(--gold);font-weight:950}.explain{margin-top:14px;border:1px solid rgba(7,17,31,.09);background:#fff;border-radius:22px;padding:15px;color:#64748B;line-height:1.62}.explain b{color:var(--navy)}.bars{display:grid;gap:10px;margin-top:14px}.bar-row{display:grid;grid-template-columns:120px 1fr 82px;gap:10px;align-items:center;font-size:13px;color:#64748B;font-weight:850}.bar-row b{text-align:right;color:var(--navy)}.bar-track{height:10px;border-radius:999px;background:#edf0f4;overflow:hidden}.bar-fill{height:100%;width:0%;border-radius:999px;background:linear-gradient(90deg,var(--gold),#e8bd78);transition:.25s ease}.result-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.sources{font-size:12px;color:#64748B;line-height:1.55;margin-top:14px}.sources a{text-underline-offset:3px}
+    .audit-section{padding:20px 0 62px}.audit-card{padding:26px}.audit-head{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;margin-bottom:18px}.audit-head h2{margin:0;font-size:28px;letter-spacing:-.05em;color:var(--navy)}.audit-head p{margin:7px 0 0;color:#64748B;line-height:1.54}.audit-badge{border-radius:999px;background:var(--navy);color:#fff;padding:9px 12px;font-size:12px;font-weight:950}.audit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.audit-grid .wide{grid-column:1/-1}.textarea{min-height:100px;resize:vertical}.check{display:flex;gap:10px;align-items:flex-start;color:#64748B;line-height:1.45;font-size:13px;margin:15px 0}.check input{margin-top:3px}.summary-pill{margin-top:14px;border:1px solid rgba(176,128,64,.20);background:rgba(176,128,64,.06);border-radius:22px;padding:14px;color:#9A6D34;line-height:1.5;font-size:13px}.summary-pill b{color:var(--navy)}.footer{padding:26px 0 40px;color:#64748B;font-size:13px}.footer-inner{border-top:1px solid rgba(7,17,31,.10);padding-top:18px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(18px);opacity:0;background:var(--navy);color:#fff;border-radius:999px;padding:12px 16px;font-weight:850;box-shadow:0 18px 50px rgba(0,0,0,.24);transition:.2s ease;z-index:100}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+    @media(max-width:980px){.hero-grid,.app-shell{grid-template-columns:1fr}.result-wrap{position:static}.visual-card{min-height:auto}.result-card{margin-top:4px}.topbar-inner{height:auto;padding:12px 0}.brand span{display:none}.hero{padding-top:38px}.hero h1{font-size:clamp(39px,10vw,58px)}}
+    @media(max-width:720px){.container{width:min(100% - 26px,1180px)}.nav-actions .btn{display:none}.hero-cta .btn{width:100%}.field-grid,.platform-grid,.metric-grid,.audit-grid{grid-template-columns:1fr}.strategy-grid{grid-template-columns:1fr}.actions-row{grid-template-columns:1fr}.flow-line{grid-template-columns:1fr}.flow-arrow{transform:rotate(90deg);height:20px}.visual-card,.panel,.result-card,.audit-card{border-radius:26px}.bar-row{grid-template-columns:90px 1fr 70px}.result-actions{grid-template-columns:1fr}.audit-head{grid-template-columns:1fr}.topbar .container{width:min(100% - 22px,1180px)}}
+  
+
+    /* V6 — UNIFORMISATION CHARTE LOCPILOT */
+    body{background:radial-gradient(circle at top left,rgba(176,128,64,.08),transparent 28%),#FFFFFF;color:var(--ink)}
+    .topbar{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);box-shadow:0 4px 18px rgba(7,17,31,.04)}
+    .topbar-inner{height:64px;max-width:1480px}
+    .brand{gap:12px}.brand img{width:178px;height:auto;border-radius:0;box-shadow:none;object-fit:contain}.brand b{display:none}.brand span{font-size:11px;color:var(--muted);font-weight:800;white-space:nowrap}
+    .lang-switch{border-color:var(--line);background:#fff;box-shadow:none}
+    .lang-btn small{color:var(--muted)}
+    .lang-btn[aria-pressed="true"]{background:var(--navy);box-shadow:none}.lang-btn[aria-pressed="true"] small{color:#fff}
+    .btn-primary{background:var(--gold);color:var(--navy);box-shadow:0 14px 30px rgba(176,128,64,.22)}
+    .btn-primary:hover{background:var(--gold-dark);color:#fff}
+    .btn-dark{background:var(--navy);color:#fff;box-shadow:0 14px 30px rgba(7,17,31,.16)}
+    .btn-dark:hover{background:var(--navy-2)}
+    .btn-light{background:#fff;color:var(--navy);border:1px solid var(--line)}
+    .btn-light:hover{border-color:var(--gold);color:var(--gold-dark)}
+    .eyebrow{border-color:rgba(176,128,64,.28);color:var(--gold-dark)}
+    .eyebrow:before{background:var(--gold)}
+    .hero h1{color:var(--navy)}.hero h1 em{color:var(--gold)}.lead{color:var(--muted)}
+    .trust-pill{border-color:var(--line);color:var(--muted);background:#fff}
+    .visual-card,.result-idle,.result-hero{background:linear-gradient(145deg,var(--navy),var(--navy-2))}
+    .visual-kicker,.journey-icon,.result-badge,.direct-price{color:var(--gold-2)}
+    .visual-card:before,.result-idle:before,.result-hero:before{background:radial-gradient(circle,rgba(176,128,64,.48),transparent 65%)}
+    .panel,.result-card,.audit-card,.step-card,.platform-card,.strategy-card,.advanced{border-color:var(--line);background:#fff}
+    .section-title h2,.step-label b,.platform-card b,.strategy-card b,summary,.hint b{color:var(--navy)}
+    .section-title p,.platform-card span,.strategy-card span,.hint{color:var(--muted)}
+    .tag{background:rgba(176,128,64,.08);color:var(--gold-dark);border-color:rgba(176,128,64,.28)}
+    .step-number{background:var(--navy)}
+    .input-wrap{background:#fff;border-color:var(--line)}
+    .input-wrap:focus-within{border-color:var(--gold);box-shadow:0 0 0 4px rgba(176,128,64,.10)}
+    .input-wrap input,.input-wrap select,.input-wrap textarea{color:var(--navy)}
+    .input-wrap span{color:var(--muted)}
+    .platform-card[aria-pressed="true"]{border-color:var(--gold);background:linear-gradient(180deg,rgba(176,128,64,.06),#fff);box-shadow:0 16px 34px rgba(176,128,64,.12)}
+    .strategy-card[aria-pressed="true"]{background:var(--navy);border-color:var(--navy)}
+    .strategy-help{border-color:rgba(176,128,64,.26);background:rgba(176,128,64,.06);color:var(--gold-dark)}
+    .result-body{background:#fff}.result-card,.audit-card{box-shadow:0 18px 50px rgba(7,17,31,.10)}
+    .bar-direct{background:var(--gold)!important}.bar-ota{background:var(--blue)!important}
+    .audit-card{border-top:4px solid var(--gold)}
+    .footer{background:var(--navy)!important;color:rgba(255,255,255,.78)!important;border-top:0!important}.footer a{color:var(--gold-light)!important}
+    @media(max-width:720px){.topbar-inner{height:auto;padding:9px 0}.brand img{width:145px}.brand span{display:none}.nav-actions{gap:6px}.nav-actions>.btn-light{display:none}}
+
+    /* V7 — LOGO OFFICIEL LOCPILOT */
+    .brand{gap:11px!important}
+    .brand .sim-brand__mark{width:44px!important;height:44px!important;flex:0 0 44px;border-radius:10px!important;object-fit:cover!important;box-shadow:0 5px 16px rgba(7,17,31,.14)!important}
+    .sim-brand__copy{display:grid;grid-template-columns:auto auto;grid-template-areas:"name by" "sub sub";align-items:end;column-gap:6px;row-gap:2px}
+    .sim-brand__copy b{display:block!important;grid-area:name;font-family:Georgia,'Times New Roman',serif;color:var(--navy)!important;font-size:22px!important;line-height:1;letter-spacing:-.025em}
+    .sim-brand__copy small{grid-area:by;color:var(--gold-dark);font-size:7px;font-weight:950;letter-spacing:.13em;line-height:1.2;padding-bottom:1px}
+    .sim-brand__copy span{grid-area:sub;display:block!important;font-size:10px!important;color:var(--muted)!important;font-weight:800;white-space:nowrap}
+    .sim-footer-brand{display:inline-flex;align-items:center;gap:8px;text-decoration:none!important;color:#fff!important;font-weight:900}
+    .sim-footer-brand img{width:30px;height:30px;border-radius:7px;object-fit:cover}
+    .sim-footer-brand small{color:var(--gold-light);font-size:8px;letter-spacing:.1em}
+    @media(max-width:720px){.brand .sim-brand__mark{width:38px!important;height:38px!important;flex-basis:38px}.sim-brand__copy b{font-size:19px!important}.sim-brand__copy span{display:none!important}}
+</style>
+<link href="/css/consent.css" rel="stylesheet"/><meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="googlebot"/><meta content="index,follow" name="bingbot"/><meta content="LocPilot by R4" name="author"/><meta content="LocPilot by R4" name="application-name"/><meta content="fr_FR" property="og:locale"/><meta content="Simulateur OTA vs direct | Comparer les frais de réservation | LocPilot" property="og:image:alt"/><meta content="Simulateur OTA vs direct | Comparer les frais de réservation | LocPilot" name="twitter:image:alt"/><script data-lp-seo-geo="1" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://locpilotbyr4.fr/#organization","name":"LocPilot by R4","url":"https://locpilotbyr4.fr/","logo":{"@type":"ImageObject","url":"https://locpilotbyr4.fr/images/logo.webp"},"email":"contact@locpilotbyr4.fr","telephone":"+33784298202","address":{"@type":"PostalAddress","streetAddress":"3 Rue de Sencours","postalCode":"65200","addressLocality":"Bagnères-de-Bigorre","addressRegion":"Occitanie","addressCountry":"FR"},"availableLanguage":["fr","en","es"]},{"@type":"WebSite","@id":"https://locpilotbyr4.fr/#website","url":"https://locpilotbyr4.fr/","name":"LocPilot by R4","publisher":{"@id":"https://locpilotbyr4.fr/#organization"},"inLanguage":["fr-FR","en-GB","es-ES"]},{"@type":"WebPage","@id":"https://locpilotbyr4.fr/simulateur/#webpage","url":"https://locpilotbyr4.fr/simulateur/","name":"Simulateur OTA vs direct | Comparer les frais de réservation | LocPilot","description":"Comparez le coût d’une réservation via une OTA avec un tarif direct cohérent. Le simulateur LocPilot aide les propriétaires à visualiser commissions, prix voyageur et revenu net.","inLanguage":"fr-FR","isPartOf":{"@id":"https://locpilotbyr4.fr/#website"},"publisher":{"@id":"https://locpilotbyr4.fr/#organization"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://locpilotbyr4.fr/simulateur/og-locpilot-simulateur.png"}},{"@type":"WebApplication","@id":"https://locpilotbyr4.fr/simulateur/#app","name":"Simulateur OTA vs réservation directe LocPilot","url":"https://locpilotbyr4.fr/simulateur/","applicationCategory":"BusinessApplication","operatingSystem":"Any","isAccessibleForFree":true,"description":"Comparez le coût d’une réservation via une OTA avec un tarif direct cohérent. Le simulateur LocPilot aide les propriétaires à visualiser commissions, prix voyageur et revenu net.","publisher":{"@id":"https://locpilotbyr4.fr/#organization"}}]}</script><script defer="" src="/js/tracking-config.js"></script><script defer="" src="/js/analytics.js"></script></head>
+<body>
+<header class="topbar">
+<div class="container topbar-inner">
+<a aria-label="Retour à LocPilot" class="brand" href="/">
+<img alt="" aria-hidden="true" class="sim-brand__mark" height="48" src="/images/logo.webp" width="48"/>
+<div class="sim-brand__copy"><b>LocPilot</b><small>BY R4</small><span data-i18n="brandSub">Simulateur OTA → direct</span></div>
+</a>
+<div class="nav-actions">
+<div aria-label="Choisir la langue" class="lang-switch">
+<button aria-pressed="true" class="lang-btn" data-lang="fr" title="Français" type="button">🇫🇷 <small>FR</small></button>
+<button aria-pressed="false" class="lang-btn" data-lang="en" title="English" type="button">🇬🇧 <small>EN</small></button>
+<button aria-pressed="false" class="lang-btn" data-lang="es" title="Español" type="button">🇪🇸 <small>ES</small></button>
+</div>
+<a class="btn btn-light" href="/proprietaires/">Espace propriétaires</a><a class="btn btn-dark" data-i18n="ctaTop" href="#audit">Demander mon audit</a>
+</div>
+</div>
+</header>
+<main id="top">
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<span class="eyebrow" data-i18n="eyebrow">Outil propriétaire</span>
+<h1 data-i18n="heroTitle">Fixez un prix direct cohérent, sans sortir un chiffre au hasard.</h1>
+<p class="lead" data-i18n="heroLead">Indiquez votre prix publié sur une OTA. Le simulateur estime le budget voyageur, conseille un prix direct et affiche le gain potentiel pour le propriétaire.</p>
+<div class="hero-cta">
+<a class="btn btn-primary" data-i18n="startBtn" href="#simulateur">Commencer la simulation</a>
+<a class="btn btn-light" data-i18n="auditBtn" href="#audit">Recevoir un audit</a>
+</div>
+<div class="trust-row">
+<span class="trust-pill" data-i18n="trust1">Calcul par nuit</span>
+<span class="trust-pill" data-i18n="trust2">Prix direct conseillé</span>
+<span class="trust-pill" data-i18n="trust3">Gain projeté saison</span>
+</div>
+</div>
+<aside aria-label="Méthode LocPilot" class="visual-card">
+<div class="visual-top">
+<div>
+<div class="visual-kicker" data-i18n="visualKicker">Méthode LocPilot</div>
+<div class="visual-title" data-i18n="visualTitle">Un parcours simple pour décider d’un prix direct.</div>
+</div>
+<div class="mini-badge">OTA → Direct</div>
+</div>
+<div class="journey">
+<div class="journey-item"><div class="journey-icon">1</div><div><strong data-i18n="flow1Title">Prix OTA affiché</strong><small data-i18n="flow1Text">Le prix visible sur la plateforme.</small></div></div>
+<div class="journey-item"><div class="journey-icon">2</div><div><strong data-i18n="flow2Title">Budget voyageur estimé</strong><small data-i18n="flow2Text">Ce que le voyageur peut réellement payer.</small></div></div>
+<div class="journey-item"><div class="journey-icon">3</div><div><strong data-i18n="flow3Title">Prix direct conseillé</strong><small data-i18n="flow3Text">Un prix plus lisible, exploitable et rentable.</small></div></div>
+</div>
+<p class="visual-bottom" data-i18n="heroNote">La gestion éventuelle n’est pas intégrée au calcul public : elle doit être analysée séparément selon les missions réellement assurées.</p>
+</aside>
+</div>
+</section>
+<section class="app" id="simulateur">
+<div class="container app-shell">
+<section class="panel">
+<div class="panel-head">
+<div class="section-title">
+<div><h2 data-i18n="formTitle">Votre simulation</h2><p data-i18n="formDesc">Trois étapes. Un prix direct conseillé. Un gain lisible.</p></div>
+<span class="tag" data-i18n="simpleTag">Version premium</span>
+</div>
+</div>
+<div class="steps">
+<div class="step-card">
+<div class="step-label"><span class="step-number">1</span><b data-i18n="step1">Votre nuitée type</b></div>
+<div class="field-grid">
+<div class="field"><label data-i18n="priceLabel" for="nightPrice">Prix publié sur l’OTA / nuit</label><div class="input-wrap"><input id="nightPrice" inputmode="decimal" min="0" step="1" type="number" value="120"/><span>€</span></div></div>
+<div class="field"><label data-i18n="nightsLabel" for="annualNights">Nuits vendues via ce canal / an</label><div class="input-wrap"><input id="annualNights" inputmode="numeric" min="0" step="1" type="number" value="80"/><span data-i18n="nightsUnit">nuits</span></div></div>
+</div>
+</div>
+<div class="step-card">
+<div class="step-label"><span class="step-number">2</span><b data-i18n="platformLabel">Plateforme analysée</b></div>
+<div class="platform-grid">
+<button aria-pressed="true" class="platform-card" data-platform="airbnb" type="button"><b>Airbnb</b><span data-i18n="airbnbCard">Modèle 2026 : frais hôte unique.</span></button>
+<button aria-pressed="false" class="platform-card" data-platform="booking" type="button"><b>Booking</b><span data-i18n="bookingCard">Commission propriétaire uniquement.</span></button>
+<button aria-pressed="false" class="platform-card" data-platform="vrbo" type="button"><b>Abritel / Vrbo</b><span data-i18n="vrboCard">Frais hôte + frais voyageur possibles.</span></button>
+<button aria-pressed="false" class="platform-card" data-platform="other" type="button"><b data-i18n="otherPlatform">Autre OTA</b><span data-i18n="otherCard">Taux personnalisables.</span></button>
+</div>
+</div>
+<div class="step-card">
+<div class="step-label"><span class="step-number">3</span><b data-i18n="strategyLabel">Stratégie du prix direct</b></div>
+<div class="strategy-grid">
+<button aria-pressed="false" class="strategy-card" data-capture="0" type="button"><b data-i18n="strategyAttractive">Attractif</b><span data-i18n="strategyAttractiveText">Le voyageur garde l’écart.</span></button>
+<button aria-pressed="true" class="strategy-card" data-capture="50" type="button"><b data-i18n="strategyBalanced">Équilibré</b><span data-i18n="strategyBalancedText">La valeur est partagée.</span></button>
+<button aria-pressed="false" class="strategy-card" data-capture="100" type="button"><b data-i18n="strategyMargin">Marge</b><span data-i18n="strategyMarginText">Prix aligné budget OTA.</span></button>
+</div>
+<div class="strategy-help" id="strategyHelp"></div>
+</div>
+</div>
+<div class="actions-row">
+<button class="btn btn-primary full" data-i18n="calculateBtn" id="calculateBtn" type="button">Calculer mon prix direct conseillé</button>
+<a class="btn btn-light" data-i18n="auditBtnShort" href="#audit">Audit</a>
+</div>
+<details class="advanced">
+<summary><span data-i18n="advancedTitle">Réglages avancés</span><span>＋</span></summary>
+<div class="advanced-body">
+<div class="field-grid">
+<div class="field"><label data-i18n="hostFeeLabel" for="hostFee">Commission côté propriétaire</label><div class="input-wrap"><input id="hostFee" min="0" step="0.1" type="number" value="15.5"/><span>%</span></div></div>
+<div class="field" id="travelerFeeField"><label data-i18n="travelerFeeLabel" for="travelerFee">Frais voyageur éventuels</label><div class="input-wrap"><input id="travelerFee" min="0" step="0.1" type="number" value="0"/><span>%</span></div></div>
+<div class="field"><label data-i18n="paymentPercentLabel" for="directPaymentPercent">Frais paiement direct</label><div class="input-wrap"><input id="directPaymentPercent" min="0" step="0.1" type="number" value="1.5"/><span>%</span></div></div>
+<div class="field"><label data-i18n="paymentFixedLabel" for="directPaymentFixed">Frais fixe / réservation</label><div class="input-wrap"><input id="directPaymentFixed" min="0" step="0.01" type="number" value="0.25"/><span>€</span></div></div>
+<div class="field"><label data-i18n="avgStayLabel" for="avgStay">Durée moyenne du séjour</label><div class="input-wrap"><input id="avgStay" min="1" step="1" type="number" value="3"/><span data-i18n="nightsUnit">nuits</span></div></div>
+</div>
+<div class="hint" id="platformHint"></div>
+</div>
+</details>
+</section>
+<aside class="result-wrap">
+<section class="result-card" id="resultCard">
+<div class="result-idle">
+<div class="idle-icon">↗</div>
+<h2 data-i18n="idleTitle">Votre résultat apparaîtra ici</h2>
+<p data-i18n="idleText">Renseignez votre nuitée type, choisissez votre plateforme, puis lancez la simulation pour obtenir un prix direct conseillé.</p>
+</div>
+<div class="result-active">
+<div class="result-hero">
+<span class="result-badge" data-i18n="resultBadge">Résultat recommandé</span>
+<h2 data-i18n="resultTitle">Prix direct conseillé</h2>
+<div class="direct-price" id="recommendedPrice">— €</div>
+<p class="result-subtitle" id="resultSubtitle"></p>
+</div>
+<div class="result-body">
+<div class="metric-grid">
+<div class="metric"><span data-i18n="travelerBudgetTile">Budget voyageur OTA</span><b id="travelerBudget">— €</b></div>
+<div class="metric gold"><span data-i18n="travelerSavingTile">Économie voyageur</span><b id="travelerSaving">— €</b></div>
+<div class="metric"><span data-i18n="netOtaTile">Net propriétaire via OTA</span><b id="netOta">— €</b></div>
+<div class="metric good"><span data-i18n="gainNightTile">Gain potentiel / nuit</span><b id="gainNight">— €</b></div>
+</div>
+<div class="flow-result">
+<div class="flow-line">
+<div class="flow-box"><span data-i18n="otaPriceTile">Prix OTA affiché</span><b id="otaPrice">— €</b></div><div class="flow-arrow">→</div>
+<div class="flow-box"><span data-i18n="travelerBudgetMini">Budget voyageur</span><b id="travelerBudgetMini">— €</b></div><div class="flow-arrow">→</div>
+<div class="flow-box"><span data-i18n="directPriceMini">Prix direct conseillé</span><b id="directPriceMini">— €</b></div>
+</div>
+</div>
+<div class="metric-grid" style="margin-top:12px">
+<div class="metric good"><span data-i18n="annualGainTile">Gain projeté</span><b id="annualGain">— €</b></div>
+<div class="metric"><span data-i18n="netDirectTile">Net direct estimé</span><b id="netDirect">— €</b></div>
+</div>
+<div class="explain" id="explanation"></div>
+<div aria-label="Comparaison net OTA et direct" class="bars">
+<div class="bar-row"><span data-i18n="barOtaNet">Net OTA</span><div class="bar-track"><div class="bar-fill" id="barOta"></div></div><b id="barOtaValue">— €</b></div>
+<div class="bar-row"><span data-i18n="barDirectNet">Net direct</span><div class="bar-track"><div class="bar-fill" id="barDirect"></div></div><b id="barDirectValue">— €</b></div>
+</div>
+<div class="result-actions"><a class="btn btn-primary" data-i18n="ctaResult" href="#audit">Recevoir mon audit</a><button class="btn btn-light" data-i18n="copyBtn" id="copyBtn" type="button">Copier le résumé</button></div>
+<p class="sources" data-i18n="sourceNote">Estimation indicative, hors taxes, ménage et gestion éventuelle. Les taux restent modifiables selon vos relevés réels.</p>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</section>
+<section class="audit-section" id="audit">
+<div class="container">
+<div class="audit-card">
+<div class="audit-head">
+<div><h2 data-i18n="auditTitle">Recevoir une lecture personnalisée</h2><p data-i18n="auditDesc">Envoyez votre simulation avec les informations clés de votre bien. Le message WhatsApp reprend automatiquement les chiffres importants.</p></div>
+<span class="audit-badge">WhatsApp</span>
+</div>
+<div class="summary-pill" data-i18n="auditSummaryIdle" id="auditSummary">Lancez une simulation pour joindre automatiquement les chiffres à votre demande d’audit.</div>
+<div class="audit-grid" style="margin-top:16px">
+<div class="field"><label data-i18n="nameLabel" for="leadName">Nom / prénom</label><div class="input-wrap"><input autocomplete="name" id="leadName" type="text"/></div></div>
+<div class="field"><label data-i18n="contactLabel" for="leadContact">Téléphone ou email</label><div class="input-wrap"><input autocomplete="email" id="leadContact" type="text"/></div></div>
+<div class="field"><label data-i18n="cityLabel" for="leadCity">Commune du logement</label><div class="input-wrap"><input id="leadCity" type="text"/></div></div>
+<div class="field"><label data-i18n="listingLabel" for="leadLink">Lien de l’annonce existante</label><div class="input-wrap"><input id="leadLink" type="url"/></div></div>
+<div class="field wide"><label data-i18n="messageLabel" for="leadMessage">Message complémentaire</label><div class="input-wrap"><textarea class="textarea" id="leadMessage" rows="4"></textarea></div></div>
+</div>
+<label class="check"><input id="consent" type="checkbox"/><span data-i18n="consentLabel">J’accepte que les informations saisies soient transmises via WhatsApp afin d’être recontacté pour mon audit LocPilot.</span></label>
+<button class="btn btn-primary full" data-i18n="whatsappBtn" id="whatsappBtn" type="button">Envoyer ma simulation sur WhatsApp</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer"><div class="container footer-inner"><span data-i18n="footerNote">Outil indicatif, hors taxes, ménage et gestion éventuelle.</span><a class="sim-footer-brand" href="/"><img alt="" aria-hidden="true" height="30" src="/images/logo.webp" width="30"/><span>LocPilot <small>BY R4</small></span></a></div></footer>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const $$ = sel => Array.from(document.querySelectorAll(sel));
+  const WA = '33784298202';
+  const LS_LANG = 'locpilot-simulator-lang';
+  const queryLang = new URLSearchParams(location.search).get('lang');
+  let lang = ['fr','en','es'].includes(queryLang) ? queryLang : (localStorage.getItem(LS_LANG) || 'fr');
+  let platform = 'airbnb';
+  let capture = 50;
+  let calculated = false;
+  let last = null;
+  const t = {
+    fr:{
+      brandSub:'Simulateur OTA → direct',ctaTop:'Demander mon audit',eyebrow:'Outil propriétaire',heroTitle:'Fixez un prix direct cohérent, sans sortir un chiffre au hasard.',heroLead:'Indiquez votre prix publié sur une OTA. Le simulateur estime le budget voyageur, conseille un prix direct et affiche le gain potentiel pour le propriétaire.',startBtn:'Commencer la simulation',auditBtn:'Recevoir un audit',auditBtnShort:'Audit',trust1:'Calcul par nuit',trust2:'Prix direct conseillé',trust3:'Gain projeté saison',visualKicker:'Méthode LocPilot',visualTitle:'Un parcours simple pour décider d’un prix direct.',flow1Title:'Prix OTA affiché',flow1Text:'Le prix visible sur la plateforme.',flow2Title:'Budget voyageur estimé',flow2Text:'Ce que le voyageur peut réellement payer.',flow3Title:'Prix direct conseillé',flow3Text:'Un prix plus lisible, exploitable et rentable.',heroNote:'La gestion éventuelle n’est pas intégrée au calcul public : elle doit être analysée séparément selon les missions réellement assurées.',formTitle:'Votre simulation',formDesc:'Trois étapes. Un prix direct conseillé. Un gain lisible.',simpleTag:'Version premium',step1:'Votre nuitée type',priceLabel:'Prix publié sur l’OTA / nuit',nightsLabel:'Nuits vendues via ce canal / an',nightsUnit:'nuits',platformLabel:'Plateforme analysée',airbnbCard:'Modèle 2026 : frais hôte unique.',bookingCard:'Commission propriétaire uniquement.',vrboCard:'Frais hôte + frais voyageur possibles.',otherPlatform:'Autre OTA',otherCard:'Taux personnalisables.',strategyLabel:'Stratégie du prix direct',strategyAttractive:'Attractif',strategyAttractiveText:'Le voyageur garde l’écart.',strategyBalanced:'Équilibré',strategyBalancedText:'La valeur est partagée.',strategyMargin:'Marge',strategyMarginText:'Prix aligné budget OTA.',strategyNoTraveler:'Ce canal ne présente pas de frais voyageur séparés dans cette simulation. Le prix direct conseillé reste donc aligné sur le prix visible, et le gain vient surtout de la commission OTA évitée.',strategyWithTraveler:'Choisissez quelle part des frais voyageur OTA doit être intégrée dans le prix direct conseillé.',calculateBtn:'Calculer mon prix direct conseillé',advancedTitle:'Réglages avancés',hostFeeLabel:'Commission côté propriétaire',travelerFeeLabel:'Frais voyageur éventuels',paymentPercentLabel:'Frais paiement direct',paymentFixedLabel:'Frais fixe / réservation',avgStayLabel:'Durée moyenne du séjour',airbnbHint:'Airbnb : logique 2026 en frais hôte unique. Par défaut : 15,5 % côté hôte et 0 % de frais voyageur séparés.',bookingHint:'Booking : commission côté propriétaire uniquement. Aucun frais voyageur séparé dans ce simulateur.',vrboHint:'Abritel / Vrbo : des frais voyageur peuvent exister. Ajustez le taux si vous avez un relevé réel.',otherHint:'Autre OTA : ajustez les taux selon votre canal.',idleTitle:'Votre résultat apparaîtra ici',idleText:'Renseignez votre nuitée type, choisissez votre plateforme, puis lancez la simulation pour obtenir un prix direct conseillé.',resultBadge:'Résultat recommandé',resultTitle:'Prix direct conseillé',resultSame:'Le gain vient principalement de la commission OTA évitée.',resultShared:'Ce prix direct partage la valeur entre le voyageur et le propriétaire.',resultMax:'Ce prix direct utilise le budget déjà accepté par le voyageur sur l’OTA.',otaPriceTile:'Prix OTA affiché',travelerBudgetTile:'Budget voyageur OTA',travelerBudgetMini:'Budget voyageur',directPriceMini:'Prix direct conseillé',netOtaTile:'Net propriétaire via OTA',netDirectTile:'Net direct estimé',gainNightTile:'Gain potentiel / nuit',travelerSavingTile:'Économie voyageur',annualGainTile:'Gain projeté',barOtaNet:'Net OTA',barDirectNet:'Net direct',explanationWithTraveler:'Le voyageur paie environ {traveler} via la plateforme. En direct, le prix conseillé est {direct}. Le voyageur économise {saving} et le propriétaire gagne {gain} de plus par nuit, hors gestion éventuelle.',explanationNoTraveler:'Le voyageur voit environ {traveler} sur ce canal. En direct, le prix conseillé reste {direct}. Le gain vient principalement de la commission OTA évitée, moins les frais de paiement direct.',sourceNote:'Estimation indicative, hors taxes, ménage et gestion éventuelle. Les taux restent modifiables selon vos relevés réels.',ctaResult:'Recevoir mon audit',auditTitle:'Recevoir une lecture personnalisée',auditDesc:'Envoyez votre simulation avec les informations clés de votre bien. Le message WhatsApp reprend automatiquement les chiffres importants.',auditSummaryIdle:'Lancez une simulation pour joindre automatiquement les chiffres à votre demande d’audit.',auditSummaryReady:'Simulation prête : {channel}, prix OTA {price}, prix direct conseillé {direct}, gain projeté {gain}.',nameLabel:'Nom / prénom',contactLabel:'Téléphone ou email',cityLabel:'Commune du logement',listingLabel:'Lien de l’annonce existante',messageLabel:'Message complémentaire',consentLabel:'J’accepte que les informations saisies soient transmises via WhatsApp afin d’être recontacté pour mon audit LocPilot.',whatsappBtn:'Envoyer ma simulation sur WhatsApp',copyBtn:'Copier le résumé',footerNote:'Outil indicatif, hors taxes, ménage et gestion éventuelle.',copied:'Résumé copié',consentNeeded:'Merci de cocher le consentement avant l’envoi.',calcFirst:'Lancez d’abord la simulation.',whatsappIntro:'Bonjour Jonathan, je souhaite recevoir un audit LocPilot à partir de cette simulation.',simulation:'Simulation',lead:'Coordonnées',source:'Source',yes:'oui',no:'non',noRef:'aucun référent détecté',langLabel:'Langue',channelLabel:'Canal',directPaymentLabel:'Frais paiement direct'},
+    en:{
+      brandSub:'OTA → direct simulator',ctaTop:'Request my audit',eyebrow:'Owner tool',heroTitle:'Set a coherent direct price without guessing.',heroLead:'Enter your OTA listed price. The simulator estimates the traveler budget, recommends a direct price and shows the potential owner gain.',startBtn:'Start simulation',auditBtn:'Get an audit',auditBtnShort:'Audit',trust1:'Per-night calculation',trust2:'Recommended direct price',trust3:'Season gain projection',visualKicker:'LocPilot method',visualTitle:'A simple path to decide your direct price.',flow1Title:'Listed OTA price',flow1Text:'The price visible on the platform.',flow2Title:'Estimated traveler budget',flow2Text:'What the traveler may actually pay.',flow3Title:'Recommended direct price',flow3Text:'A clearer, usable and more profitable price.',heroNote:'Any property management cost is not included in the public calculation. It should be reviewed separately during the audit according to the services actually provided.',formTitle:'Your simulation',formDesc:'Three steps. One recommended direct price. One clear gain.',simpleTag:'Premium version',step1:'Your typical night',priceLabel:'Listed OTA price / night',nightsLabel:'Nights sold through this channel / year',nightsUnit:'nights',platformLabel:'Channel analyzed',airbnbCard:'2026 model: single host fee.',bookingCard:'Owner commission only.',vrboCard:'Host fee + possible traveler fee.',otherPlatform:'Other OTA',otherCard:'Custom rates.',strategyLabel:'Direct price strategy',strategyAttractive:'Attractive',strategyAttractiveText:'Traveler keeps the difference.',strategyBalanced:'Balanced',strategyBalancedText:'Value is shared.',strategyMargin:'Margin',strategyMarginText:'Price matches OTA budget.',strategyNoTraveler:'This channel has no separate traveler fee in this simulation. The recommended direct price remains aligned with the visible price, and the gain mainly comes from avoiding the OTA commission.',strategyWithTraveler:'Choose how much of the OTA traveler fee should be included in the recommended direct price.',calculateBtn:'Calculate my recommended direct price',advancedTitle:'Advanced settings',hostFeeLabel:'Owner-side commission',travelerFeeLabel:'Possible traveler fee',paymentPercentLabel:'Direct payment fee',paymentFixedLabel:'Fixed fee / booking',avgStayLabel:'Average stay length',airbnbHint:'Airbnb: 2026 single host-fee logic. Default: 15.5% host fee and 0% separate traveler fee.',bookingHint:'Booking: owner-side commission only. No separate traveler fee in this simulator.',vrboHint:'Vrbo: traveler fees may exist. Adjust the rate if you have a real statement.',otherHint:'Other OTA: adjust rates according to your channel.',idleTitle:'Your result will appear here',idleText:'Enter your typical night, choose your platform, then run the simulation to get a recommended direct price.',resultBadge:'Recommended result',resultTitle:'Recommended direct price',resultSame:'The gain mainly comes from avoiding the OTA commission.',resultShared:'This direct price shares value between traveler and owner.',resultMax:'This direct price uses the budget already accepted by the traveler on the OTA.',otaPriceTile:'Listed OTA price',travelerBudgetTile:'OTA traveler budget',travelerBudgetMini:'Traveler budget',directPriceMini:'Recommended direct price',netOtaTile:'Owner net via OTA',netDirectTile:'Estimated direct net',gainNightTile:'Potential gain / night',travelerSavingTile:'Traveler saving',annualGainTile:'Projected gain',barOtaNet:'OTA net',barDirectNet:'Direct net',explanationWithTraveler:'The traveler pays around {traveler} through the platform. In direct booking, the recommended price is {direct}. The traveler saves {saving} and the owner earns {gain} more per night, excluding any management cost.',explanationNoTraveler:'The traveler sees around {traveler} on this channel. In direct booking, the recommended price remains {direct}. The gain mainly comes from avoiding the OTA commission, minus direct payment fees.',sourceNote:'Indicative estimate, excluding taxes, cleaning and any management cost. Rates remain adjustable according to your real statements.',ctaResult:'Get my audit',auditTitle:'Request a personalized review',auditDesc:'Send your simulation with the key property details. The WhatsApp message automatically includes the important figures.',auditSummaryIdle:'Run a simulation to attach the key figures to your audit request.',auditSummaryReady:'Simulation ready: {channel}, OTA price {price}, recommended direct price {direct}, projected gain {gain}.',nameLabel:'Your name',contactLabel:'Phone or email',cityLabel:'Property location',listingLabel:'Existing listing link',messageLabel:'Additional message',consentLabel:'I agree that the entered information may be sent via WhatsApp so I can be contacted about my LocPilot audit.',whatsappBtn:'Send my simulation on WhatsApp',copyBtn:'Copy summary',footerNote:'Indicative tool, excluding taxes, cleaning and any management cost.',copied:'Summary copied',consentNeeded:'Please tick consent before sending.',calcFirst:'Run the simulation first.',whatsappIntro:'Hello Jonathan, I would like to receive a LocPilot audit based on this simulation.',simulation:'Simulation',lead:'Contact details',source:'Source',yes:'yes',no:'no',noRef:'no referrer detected',langLabel:'Language',channelLabel:'Channel',directPaymentLabel:'Direct payment fees'},
+    es:{
+      brandSub:'Simulador OTA → directo',ctaTop:'Pedir mi auditoría',eyebrow:'Herramienta para propietarios',heroTitle:'Define un precio directo coherente sin inventar una cifra.',heroLead:'Introduce tu precio publicado en una OTA. El simulador estima el presupuesto del viajero, recomienda un precio directo y muestra la ganancia potencial del propietario.',startBtn:'Iniciar simulación',auditBtn:'Recibir auditoría',auditBtnShort:'Auditoría',trust1:'Cálculo por noche',trust2:'Precio directo recomendado',trust3:'Ganancia proyectada',visualKicker:'Método LocPilot',visualTitle:'Un recorrido simple para decidir un precio directo.',flow1Title:'Precio OTA publicado',flow1Text:'El precio visible en la plataforma.',flow2Title:'Presupuesto viajero estimado',flow2Text:'Lo que el viajero puede pagar realmente.',flow3Title:'Precio directo recomendado',flow3Text:'Un precio más claro, útil y rentable.',heroNote:'La posible gestión no se integra en el cálculo público: debe analizarse aparte durante la auditoría según las misiones realmente realizadas.',formTitle:'Tu simulación',formDesc:'Tres pasos. Un precio directo recomendado. Una ganancia clara.',simpleTag:'Versión premium',step1:'Tu noche tipo',priceLabel:'Precio OTA publicado / noche',nightsLabel:'Noches vendidas por este canal / año',nightsUnit:'noches',platformLabel:'Plataforma analizada',airbnbCard:'Modelo 2026: gasto único del anfitrión.',bookingCard:'Solo comisión del propietario.',vrboCard:'Gastos anfitrión + posibles gastos viajero.',otherPlatform:'Otra OTA',otherCard:'Tasas personalizables.',strategyLabel:'Estrategia de precio directo',strategyAttractive:'Atractivo',strategyAttractiveText:'El viajero conserva la diferencia.',strategyBalanced:'Equilibrado',strategyBalancedText:'Se comparte el valor.',strategyMargin:'Margen',strategyMarginText:'Precio alineado con presupuesto OTA.',strategyNoTraveler:'Este canal no tiene gastos separados del viajero en esta simulación. El precio directo recomendado queda alineado con el precio visible y la ganancia viene sobre todo de evitar la comisión OTA.',strategyWithTraveler:'Elige qué parte de los gastos del viajero OTA quieres integrar en el precio directo recomendado.',calculateBtn:'Calcular mi precio directo recomendado',advancedTitle:'Ajustes avanzados',hostFeeLabel:'Comisión del propietario',travelerFeeLabel:'Posibles gastos del viajero',paymentPercentLabel:'Gastos de pago directo',paymentFixedLabel:'Gasto fijo / reserva',avgStayLabel:'Duración media de estancia',airbnbHint:'Airbnb: lógica 2026 de gasto único del anfitrión. Por defecto: 15,5 % anfitrión y 0 % gasto separado del viajero.',bookingHint:'Booking: solo comisión del propietario. Sin gasto separado del viajero en este simulador.',vrboHint:'Vrbo: pueden existir gastos del viajero. Ajusta la tasa si tienes un desglose real.',otherHint:'Otra OTA: ajusta las tasas según tu canal.',idleTitle:'Tu resultado aparecerá aquí',idleText:'Introduce tu noche tipo, elige tu plataforma y lanza la simulación para obtener un precio directo recomendado.',resultBadge:'Resultado recomendado',resultTitle:'Precio directo recomendado',resultSame:'La ganancia viene principalmente de evitar la comisión OTA.',resultShared:'Este precio directo comparte valor entre viajero y propietario.',resultMax:'Este precio directo utiliza el presupuesto ya aceptado por el viajero en la OTA.',otaPriceTile:'Precio OTA publicado',travelerBudgetTile:'Presupuesto viajero OTA',travelerBudgetMini:'Presupuesto viajero',directPriceMini:'Precio directo recomendado',netOtaTile:'Neto propietario vía OTA',netDirectTile:'Neto directo estimado',gainNightTile:'Ganancia potencial / noche',travelerSavingTile:'Ahorro viajero',annualGainTile:'Ganancia proyectada',barOtaNet:'Neto OTA',barDirectNet:'Neto directo',explanationWithTraveler:'El viajero paga aproximadamente {traveler} a través de la plataforma. En directo, el precio recomendado es {direct}. El viajero ahorra {saving} y el propietario gana {gain} más por noche, sin incluir una posible gestión.',explanationNoTraveler:'El viajero ve aproximadamente {traveler} en este canal. En directo, el precio recomendado queda en {direct}. La ganancia viene principalmente de evitar la comisión OTA, menos los gastos de pago directo.',sourceNote:'Estimación orientativa, sin impuestos, limpieza ni posible gestión. Las tasas pueden ajustarse según tus datos reales.',ctaResult:'Recibir mi auditoría',auditTitle:'Pedir una lectura personalizada',auditDesc:'Envía tu simulación con los datos clave del alojamiento. El mensaje de WhatsApp incluye automáticamente las cifras importantes.',auditSummaryIdle:'Lanza una simulación para adjuntar las cifras clave a tu solicitud de auditoría.',auditSummaryReady:'Simulación lista: {channel}, precio OTA {price}, precio directo recomendado {direct}, ganancia proyectada {gain}.',nameLabel:'Nombre / apellido',contactLabel:'Teléfono o email',cityLabel:'Localidad del alojamiento',listingLabel:'Enlace del anuncio existente',messageLabel:'Mensaje complementario',consentLabel:'Acepto que la información introducida se transmita por WhatsApp para que puedan contactarme sobre mi auditoría LocPilot.',whatsappBtn:'Enviar mi simulación por WhatsApp',copyBtn:'Copiar resumen',footerNote:'Herramienta orientativa, sin impuestos, limpieza ni posible gestión.',copied:'Resumen copiado',consentNeeded:'Marca el consentimiento antes de enviar.',calcFirst:'Lanza primero la simulación.',whatsappIntro:'Hola Jonathan, quiero recibir una auditoría LocPilot a partir de esta simulación.',simulation:'Simulación',lead:'Datos de contacto',source:'Origen',yes:'sí',no:'no',noRef:'sin referente detectado',langLabel:'Idioma',channelLabel:'Canal',directPaymentLabel:'Gastos de pago directo'}
+  };
+  const platformDefaults={airbnb:{host:15.5,traveler:0,label:'Airbnb'},booking:{host:17,traveler:0,label:'Booking'},vrbo:{host:8,traveler:10,label:'Abritel / Vrbo'},other:{host:15,traveler:0,label:'Autre OTA'}};
+  const langName={fr:'Français',en:'English',es:'Español'};
+  function tr(k){return (t[lang]&&t[lang][k])||t.fr[k]||k}
+  function locale(){return lang==='en'?'en-GB':lang==='es'?'es-ES':'fr-FR'}
+  function euro(n,dec=2){return (Number(n)||0).toLocaleString(locale(),{style:'currency',currency:'EUR',minimumFractionDigits:dec,maximumFractionDigits:dec})}
+  function euro0(n){return (Number(n)||0).toLocaleString(locale(),{style:'currency',currency:'EUR',maximumFractionDigits:0})}
+  function pct(n){return `${(Number(n)||0).toLocaleString(locale(),{maximumFractionDigits:1})} %`}
+  function num(id){const el=$(id); const v=parseFloat(el&&el.value); return Number.isFinite(v)?v:0}
+  function set(id,val){const el=$(id); if(el) el.textContent=val}
+  function htmlSet(id,val){const el=$(id); if(el) el.innerHTML=val}
+  function applyI18n(){
+    document.documentElement.lang=lang;
+    document.title=lang==='en'?'LocPilot OTA Simulator — Premium direct price':lang==='es'?'Simulador OTA LocPilot — Precio directo premium':'Simulateur OTA LocPilot — Prix direct conseillé';
+    $$('[data-i18n]').forEach(el=>{const key=el.dataset.i18n; if(t[lang][key]) el.textContent=t[lang][key]});
+    $$('.lang-btn').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));
+    updatePlatform(platform,false); updateStrategy(capture,false); render(false);
+  }
+  function getTracking(){const qs=new URLSearchParams(location.search);return{source:qs.get('utm_source')||'',medium:qs.get('utm_medium')||'',campaign:qs.get('utm_campaign')||'',content:qs.get('utm_content')||'',term:qs.get('utm_term')||'',clickId:qs.get('fbclid')||qs.get('gclid')||'',referrer:document.referrer||'',url:location.href}}
+  function updatePlatform(p,updateFields=true){platform=p; $$('.platform-card').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.platform===platform))); const d=platformDefaults[platform]; if(updateFields){$('hostFee').value=d.host;$('travelerFee').value=d.traveler;} const tf=$('travelerFee'); if(platform==='airbnb'||platform==='booking'){tf.value=0;tf.disabled=true;$('travelerFeeField').style.opacity=.58}else{tf.disabled=false;$('travelerFeeField').style.opacity=1} htmlSet('platformHint',`<b>${d.label}</b> — ${tr(platform+'Hint')}`); render(false)}
+  function updateStrategy(c,rerender=true){capture=Number(c)||0; $$('.strategy-card').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.capture)===capture))); if(rerender) render(false)}
+  function getData(){
+    const price=Math.max(0,num('nightPrice')); const nights=Math.max(0,num('annualNights')); const hostRate=Math.max(0,num('hostFee')); const travelerRate=(platform==='airbnb'||platform==='booking')?0:Math.max(0,num('travelerFee')); const directPct=Math.max(0,num('directPaymentPercent')); const fixed=Math.max(0,num('directPaymentFixed')); const stay=Math.max(1,num('avgStay')||1);
+    const hostFee=price*hostRate/100; const travelerFee=price*travelerRate/100; const travelerBudget=price+travelerFee; const netOta=price-hostFee; const directPrice=price+(travelerFee*capture/100); const directCost=directPrice*directPct/100+(fixed/stay); const netDirect=directPrice-directCost; const gain=Math.max(0,netDirect-netOta); const travelerSaving=Math.max(0,travelerBudget-directPrice); const annualGain=gain*nights;
+    return{price,nights,hostRate,travelerRate,directPct,fixed,stay,hostFee,travelerFee,travelerBudget,netOta,directPrice,directCost,netDirect,gain,travelerSaving,annualGain,platformLabel:platformDefaults[platform].label,capture};
+  }
+  function render(){
+    const d=getData(); last=d; const noTraveler=d.travelerFee<=0.001; set('strategyHelp',noTraveler?tr('strategyNoTraveler'):tr('strategyWithTraveler'));
+    if(!calculated){ htmlSet('auditSummary',tr('auditSummaryIdle')); return; }
+    $('resultCard').classList.add('result-ready');
+    set('recommendedPrice',euro(d.directPrice)); set('travelerBudget',euro(d.travelerBudget)); set('travelerBudgetMini',euro(d.travelerBudget)); set('directPriceMini',euro(d.directPrice)); set('otaPrice',euro(d.price)); set('netOta',euro(d.netOta)); set('netDirect',euro(d.netDirect)); set('gainNight',euro(d.gain)); set('travelerSaving',euro(d.travelerSaving)); set('annualGain',euro0(d.annualGain)); set('barOtaValue',euro(d.netOta)); set('barDirectValue',euro(d.netDirect));
+    const max=Math.max(d.netOta,d.netDirect,1); $('barOta').style.width=Math.max(5,(d.netOta/max)*100)+'%'; $('barDirect').style.width=Math.max(5,(d.netDirect/max)*100)+'%';
+    const sub=noTraveler?tr('resultSame'):capture===100?tr('resultMax'):capture===0?tr('strategyAttractiveText'):tr('resultShared'); set('resultSubtitle',sub);
+    const tpl=noTraveler?tr('explanationNoTraveler'):tr('explanationWithTraveler'); htmlSet('explanation',tpl.replace('{traveler}',`<b>${euro(d.travelerBudget)}</b>`).replace('{direct}',`<b>${euro(d.directPrice)}</b>`).replace('{saving}',`<b>${euro(d.travelerSaving)}</b>`).replace('{gain}',`<b>${euro(d.gain)}</b>`));
+    htmlSet('auditSummary',tr('auditSummaryReady').replace('{channel}',d.platformLabel).replace('{price}',euro(d.price)).replace('{direct}',euro(d.directPrice)).replace('{gain}',euro0(d.annualGain)));
+  }
+  function summary(){
+    const d=last||getData(), trk=getTracking();
+    return [tr('whatsappIntro'),' ',`${tr('simulation')} :`,`${tr('langLabel')} : ${langName[lang]}`,`${tr('channelLabel')} : ${d.platformLabel}`,`${tr('priceLabel')} : ${euro(d.price)}`,`${tr('travelerBudgetTile')} : ${euro(d.travelerBudget)}`,`${tr('resultTitle')} : ${euro(d.directPrice)}`,`${tr('netOtaTile')} : ${euro(d.netOta)}`,`${tr('netDirectTile')} : ${euro(d.netDirect)}`,`${tr('gainNightTile')} : ${euro(d.gain)}`,`${tr('annualGainTile')} (${Math.round(d.nights).toLocaleString(locale())} ${tr('nightsUnit')}) : ${euro0(d.annualGain)}`,`Commission OTA : ${pct(d.hostRate)}`,`${tr('travelerFeeLabel')} : ${pct(d.travelerRate)}`,`${tr('directPaymentLabel')} : ${pct(d.directPct)} + ${euro(d.fixed)} / réservation`,' ',`${tr('lead')} :`,`Nom : ${$('leadName').value || '-'}`,`Contact : ${$('leadContact').value || '-'}`,`Commune : ${$('leadCity').value || '-'}`,`Annonce : ${$('leadLink').value || '-'}`,`Message : ${$('leadMessage').value || '-'}`,' ',`${tr('source')} :`,`utm_source : ${trk.source || '-'}`,`utm_medium : ${trk.medium || '-'}`,`utm_campaign : ${trk.campaign || '-'}`,`utm_content : ${trk.content || '-'}`,`referrer : ${trk.referrer || tr('noRef')}`,`click_id : ${trk.clickId ? tr('yes') : tr('no')}`,`URL : ${trk.url}`].join('\n');
+  }
+  function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2200)}
+  function calculate(){calculated=true; render(true); if(window.matchMedia('(max-width: 980px)').matches){$('resultCard').scrollIntoView({behavior:'smooth',block:'start'});}}
+  function init(){
+    if(!t[lang]) lang='fr';
+    $$('.lang-btn').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.lang;localStorage.setItem(LS_LANG,lang);applyI18n()}));
+    $$('.platform-card').forEach(b=>b.addEventListener('click',()=>updatePlatform(b.dataset.platform,true)));
+    $$('.strategy-card').forEach(b=>b.addEventListener('click',()=>updateStrategy(b.dataset.capture)));
+    ['nightPrice','annualNights','hostFee','travelerFee','directPaymentPercent','directPaymentFixed','avgStay'].forEach(id=>$(id).addEventListener('input',()=>render(false)));
+    $('calculateBtn').addEventListener('click',calculate);
+    $('copyBtn').addEventListener('click',async()=>{ if(!calculated){toast(tr('calcFirst')); return;} try{await navigator.clipboard.writeText(summary());toast(tr('copied'));}catch(e){toast(tr('copied'));} });
+    $('whatsappBtn').addEventListener('click',()=>{ if(!$('consent').checked){toast(tr('consentNeeded'));return;} if(!calculated){calculated=true;render(true);} window.open(`https://wa.me/${WA}?text=${encodeURIComponent(summary())}`,'_blank','noopener'); });
+    applyI18n();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
+<div aria-hidden="true" aria-label="Cookies et confidentialité" aria-live="polite" class="lp-consent-banner" hidden="" id="lpConsentBanner" role="dialog">
+<div class="lp-consent-banner__card">
+<div class="lp-consent-banner__copy"><strong>Votre choix compte</strong><p>Nous utilisons des cookies nécessaires au fonctionnement du site. Avec votre accord, Google Analytics 4 peut mesurer l’audience et Meta Pixel peut mesurer l’efficacité de nos actions marketing. Vous pouvez accepter, refuser ou personnaliser votre choix. <a href="/politique-cookies.html">Politique cookies</a></p></div>
+<div class="lp-consent-actions"><button class="lp-consent-btn lp-consent-btn--choice" id="lpConsentReject" type="button">Tout refuser</button><button class="lp-consent-btn lp-consent-btn--settings" id="lpConsentCustomize" type="button">Personnaliser</button><button class="lp-consent-btn lp-consent-btn--choice" id="lpConsentAccept" type="button">Tout accepter</button></div>
+</div>
+</div>
+<div aria-hidden="true" aria-labelledby="lpConsentTitle" aria-modal="true" class="lp-consent-modal" hidden="" id="lpConsentModal" role="dialog">
+<div class="lp-consent-modal__backdrop" data-lp-consent-close=""></div>
+<section class="lp-consent-modal__dialog">
+<button aria-label="Fermer" class="lp-consent-modal__close" id="lpConsentClose" type="button">×</button>
+<span class="lp-consent-kicker">LocPilot</span><h2 id="lpConsentTitle">Préférences cookies</h2><p class="lp-consent-modal__intro">Choisissez les finalités optionnelles. Les cookies nécessaires restent actifs pour le fonctionnement et la mémorisation de votre choix.</p>
+<div class="lp-consent-option"><div><strong>Cookies nécessaires</strong><small>Fonctionnement du site et mémorisation de votre choix.</small></div><span class="lp-consent-required">Toujours actifs</span></div>
+<label class="lp-consent-option" for="lpConsentAnalytics"><div><strong>Mesure d’audience</strong><small>Google Analytics 4, uniquement après votre accord.</small></div><input id="lpConsentAnalytics" type="checkbox"/></label>
+<label class="lp-consent-option" for="lpConsentMarketing"><div><strong>Mesure marketing</strong><small>Meta Pixel, uniquement après votre accord.</small></div><input id="lpConsentMarketing" type="checkbox"/></label>
+<div class="lp-consent-modal__footer"><button class="lp-consent-btn lp-consent-btn--choice" id="lpConsentRejectAll" type="button">Tout refuser</button><button class="lp-consent-btn lp-consent-btn--settings" id="lpConsentSave" type="button">Enregistrer mes choix</button><button class="lp-consent-btn lp-consent-btn--choice" id="lpConsentAcceptAll" type="button">Tout accepter</button></div>
+</section>
+</div><script defer="" src="/js/consent.js"></script><button aria-label="Préférences cookies" class="lp-consent-manage-link" data-open-cookie-manager="" style="position:fixed;right:12px;bottom:12px;z-index:9990;border:1px solid #d7e1ea;background:#fff;color:#073672;border-radius:999px;padding:7px 10px;font:700 10px Arial,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.10)" type="button">Préférences cookies</button></body>
+</html>

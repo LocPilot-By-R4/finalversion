@@ -1,0 +1,146 @@
+[
+  {
+    "path": "hebergements/index.html",
+    "h1": "Tous les hébergements",
+    "searchShell": true,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "en/accommodations/index.html",
+    "h1": "All accommodation",
+    "searchShell": true,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "es/alojamientos/index.html",
+    "h1": "Todos los alojamientos",
+    "searchShell": true,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "activites/index.html",
+    "h1": "Votre séjour commence par ce que vous aimez faire",
+    "searchShell": false,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "en/activities/index.html",
+    "h1": "Your stay starts with what you love doing",
+    "searchShell": false,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "es/actividades/index.html",
+    "h1": "Tu estancia empieza por lo que te gusta hacer",
+    "searchShell": false,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "destinations/index.html",
+    "h1": "Des destinations à vivre, pas seulement à visiter",
+    "searchShell": false,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "en/destinations/index.html",
+    "h1": "Destinations to experience, not just visit",
+    "searchShell": false,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "es/destinos/index.html",
+    "h1": "Destinos para vivir, no solo para visitar",
+    "searchShell": false,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "experiences/index.html",
+    "h1": "Ne cherchez pas seulement où partir. Choisissez ce que vous voulez vivre.",
+    "searchShell": false,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "en/experiences/index.html",
+    "h1": "Do not only ask where to go. Choose what you want to experience.",
+    "searchShell": false,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "es/experiencias/index.html",
+    "h1": "No busques solo adónde ir. Elige lo que quieres vivir.",
+    "searchShell": false,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "reservation-directe/index.html",
+    "h1": "Le bon canal de réservation, clairement indiqué",
+    "searchShell": false,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "en/direct-booking/index.html",
+    "h1": "The right booking channel, clearly identified",
+    "searchShell": false,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "es/reserva-directa/index.html",
+    "h1": "El canal de reserva adecuado, indicado con claridad",
+    "searchShell": false,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "a-propos/index.html",
+    "h1": "Une plateforme construite autour du séjour, pas autour de la commission",
+    "searchShell": false,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "en/about/index.html",
+    "h1": "A platform built around the stay, not around commission",
+    "searchShell": false,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  },
+  {
+    "path": "es/acerca-de/index.html",
+    "h1": "Una plataforma construida alrededor de la estancia, no de la comisión",
+    "searchShell": false,
+    "activeNav": 1,
+    "desc": true,
+    "canonical": true
+  }
+]

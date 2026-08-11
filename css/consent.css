@@ -1,0 +1,29 @@
+:root{--lp-consent-navy:#07111F;--lp-consent-gold:#B08040;--lp-consent-gold-dark:#9A6D34;--lp-consent-blue:#1466B8;--lp-consent-text:#0F172A;--lp-consent-muted:#64748B;--lp-consent-border:#E2E8F0;--lp-consent-teal:#B08040}
+.lp-consent-banner[hidden],.lp-consent-modal[hidden]{display:none!important}
+.lp-consent-banner{position:fixed;z-index:99990;left:18px;right:18px;bottom:18px;font-family:Arial,Helvetica,sans-serif;color:var(--lp-consent-text)}
+.lp-consent-banner__card{width:min(1080px,100%);margin:0 auto;background:#fff;border:1px solid var(--lp-consent-border);border-radius:16px;box-shadow:0 20px 60px rgba(3,36,78,.28);padding:18px 20px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center}
+.lp-consent-banner__copy strong{display:block;font-size:15px;line-height:1.25;margin-bottom:6px;color:var(--lp-consent-navy)}
+.lp-consent-banner__copy p{margin:0;font-size:12px;line-height:1.55;color:var(--lp-consent-muted);max-width:720px}
+.lp-consent-banner__copy a{color:var(--lp-consent-navy);text-decoration:underline;text-underline-offset:2px}
+.lp-consent-actions{display:flex;gap:9px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.lp-consent-btn{appearance:none;border:1px solid var(--lp-consent-navy);border-radius:9px;min-height:40px;padding:0 15px;font:800 12px/1 Arial,Helvetica,sans-serif;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;color:var(--lp-consent-navy);background:#fff}
+.lp-consent-btn:hover{transform:translateY(-1px);box-shadow:0 5px 15px rgba(7,54,114,.13)}
+.lp-consent-btn:focus-visible{outline:3px solid rgba(13,157,163,.32);outline-offset:2px}
+.lp-consent-btn--choice{background:var(--lp-consent-navy);color:#fff}
+.lp-consent-btn--settings{border-color:var(--lp-consent-border);background:#FFFFFF}
+.lp-consent-modal{position:fixed;z-index:99999;inset:0;display:grid;place-items:center;padding:18px;font-family:Arial,Helvetica,sans-serif;color:var(--lp-consent-text)}
+.lp-consent-modal__backdrop{position:absolute;inset:0;background:rgba(2,24,52,.62);backdrop-filter:blur(4px)}
+.lp-consent-modal__dialog{position:relative;z-index:1;width:min(620px,100%);max-height:calc(100vh - 36px);overflow:auto;background:#fff;border-radius:18px;box-shadow:0 26px 80px rgba(0,0,0,.3);padding:26px}
+.lp-consent-modal__close{position:absolute;right:13px;top:13px;width:36px;height:36px;border:0;border-radius:50%;background:#FFFFFF;color:var(--lp-consent-navy);font-size:24px;line-height:36px;cursor:pointer}
+.lp-consent-kicker{font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--lp-consent-teal)}
+.lp-consent-modal h2{margin:6px 42px 8px 0;color:var(--lp-consent-navy);font-size:27px;line-height:1.15}
+.lp-consent-modal__intro{margin:0 0 17px;color:var(--lp-consent-muted);font-size:13px;line-height:1.55}
+.lp-consent-option{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 0;border-top:1px solid var(--lp-consent-border)}
+.lp-consent-option strong{display:block;color:var(--lp-consent-navy);font-size:13px;margin-bottom:3px}.lp-consent-option small{display:block;color:var(--lp-consent-muted);font-size:11px;line-height:1.4}
+.lp-consent-option input{width:21px;height:21px;accent-color:var(--lp-consent-teal)}
+.lp-consent-required{font-size:11px;font-weight:900;color:var(--lp-consent-teal)}
+.lp-consent-modal__footer{display:flex;justify-content:flex-end;gap:9px;flex-wrap:wrap;margin-top:18px}
+.lp-consent-manage-link{cursor:pointer}
+@media(max-width:760px){.lp-consent-banner{left:9px;right:9px;bottom:9px}.lp-consent-banner__card{display:block;padding:16px}.lp-consent-actions{display:grid;grid-template-columns:1fr 1fr;margin-top:13px}.lp-consent-btn{width:100%;padding:0 10px}.lp-consent-btn--settings{grid-column:1/-1;grid-row:2}.lp-consent-modal__dialog{padding:22px 18px}.lp-consent-modal__footer{display:grid;grid-template-columns:1fr 1fr}.lp-consent-modal__footer .lp-consent-btn--settings{grid-column:1/-1}.lp-consent-modal h2{font-size:24px}}
+
+.lp-consent-btn--choice{background:var(--lp-consent-navy);border-color:var(--lp-consent-navy);color:#fff}.lp-consent-btn--choice:hover{background:#0B1627;border-color:#0B1627}.lp-consent-btn--settings:hover{border-color:var(--lp-consent-gold);color:var(--lp-consent-gold-dark)}.lp-consent-btn:focus-visible{outline-color:rgba(176,128,64,.35)}.lp-consent-option input{accent-color:var(--lp-consent-gold)}.lp-consent-required,.lp-consent-kicker{color:var(--lp-consent-gold-dark)}
