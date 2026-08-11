@@ -34,7 +34,7 @@ $$('[data-activity-option]').forEach(b=>b.addEventListener('click',()=>{chooseAc
 // filters modal
 $('#resetFilters')?.addEventListener('click',()=>$$('#filtersModal input[type=checkbox]').forEach(i=>i.checked=false));$('#applyFilters')?.addEventListener('click',()=>closeDialog($('#filtersModal')));
 // search builds neutral results URL (no property promotion on homepage)
-function resultsBase(){if(lang==='en')return '/en/accommodations/';if(lang==='es')return '/es/alojamientos/';return '/hebergements/'}
+const platformScript=document.querySelector('script[src$="js/platform-v2.js"]');const siteBase=new URL('../',platformScript?.src||location.href);function resultsBase(){const path=lang==='en'?'en/accommodations/':lang==='es'?'es/alojamientos/':'hebergements/';return new URL(path,siteBase).href}
 function doSearch(){const q=new URLSearchParams();const dest=$('#destinationInput')?.value.trim();if(dest)q.set('destination',dest);const arr=$('#arrivalDate')?.value,dep=$('#departureDate')?.value;if(arr)q.set('arrival',arr);if(dep)q.set('departure',dep);q.set('adults',String(adults));if(children)q.set('children',String(children));if(activeActivity)q.set('activity',activeActivity);const filters=$$('#filtersModal input:checked').map(i=>i.value);if(filters.length)q.set('filters',filters.join(','));location.href=resultsBase()+(q.toString()?`?${q}`:'')}
 $('#searchBtn')?.addEventListener('click',doSearch);$('#destinationInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')doSearch()});
 // prefill query on collection pages without displaying promoted properties
