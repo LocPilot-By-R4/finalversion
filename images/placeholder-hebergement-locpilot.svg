@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">LocPilot - Photo à venir</title>
+  <desc id="desc">Image de remplacement pour un hébergement sans photo</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#061a36"/>
+      <stop offset="100%" stop-color="#0c2f5c"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c89b3c"/>
+      <stop offset="100%" stop-color="#e0b45a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+
+  <circle cx="1020" cy="140" r="120" fill="#ffffff" fill-opacity="0.04"/>
+  <circle cx="150" cy="670" r="170" fill="#ffffff" fill-opacity="0.04"/>
+
+  <path d="M0 610 L180 470 L320 560 L470 420 L650 570 L860 350 L1200 580 L1200 800 L0 800 Z" fill="#0f3a70" fill-opacity="0.55"/>
+  <path d="M0 665 L140 555 L290 625 L430 520 L610 650 L790 485 L1010 645 L1200 540 L1200 800 L0 800 Z" fill="#174b8d" fill-opacity="0.55"/>
+
+  <rect x="90" y="90" width="120" height="120" rx="24" fill="#0b1220" stroke="url(#gold)" stroke-width="6"/>
+  <path d="M122 164 L150 128 L180 170 L210 138 L210 188 L122 188 Z" fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="245" y="145" fill="#ffffff" font-size="58" font-weight="700" font-family="Arial, Helvetica, sans-serif">LocPilot</text>
+  <text x="248" y="185" fill="#d7dee8" font-size="24" font-weight="600" font-family="Arial, Helvetica, sans-serif" letter-spacing="4">BY R4</text>
+
+  <text x="90" y="340" fill="#ffffff" font-size="72" font-weight="700" font-family="Arial, Helvetica, sans-serif">Photo à venir</text>
+  <text x="90" y="400" fill="#d7dee8" font-size="30" font-family="Arial, Helvetica, sans-serif">
+    Cet hébergement est bien disponible, mais son visuel n’a pas encore été transmis.
+  </text>
+  <text x="90" y="448" fill="#d7dee8" font-size="30" font-family="Arial, Helvetica, sans-serif">
+    Réservation possible via LocPilot ou la plateforme partenaire.
+  </text>
+
+  <rect x="90" y="520" width="340" height="64" rx="12" fill="url(#gold)"/>
+  <text x="260" y="562" text-anchor="middle" fill="#0b1220" font-size="28" font-weight="700" font-family="Arial, Helvetica, sans-serif">
+    Hébergement vérifié
+  </text>
+</svg>
