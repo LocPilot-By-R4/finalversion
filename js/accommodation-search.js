@@ -12,8 +12,8 @@
       'script[src$="js/accommodation-search.js"]'
     );
 
-  const fallbackImage = new URL(
-    '../images/placeholder-hebergement-locpilot.svg',
+  const fallbackLogo = new URL(
+    '../images/logo.webp',
     script?.src || window.location.href
   ).href;
 
@@ -217,38 +217,84 @@
         'lp-property-card__media'
       );
 
-    const image =
-      document.createElement('img');
+    const visual =
+      createElement(
+        'div',
+        'lp-property-card__visual'
+      );
 
-    image.src =
-      product.image ||
-      fallbackImage;
+    const renderFallback = () => {
+      visual.replaceChildren();
 
-    image.alt =
-      product.name
-        ? `Photo de ${product.name}`
-        : 'Hébergement';
+      const fallback =
+        createElement(
+          'div',
+          'lp-property-card__fallback'
+        );
 
-    image.loading = 'lazy';
-    image.decoding = 'async';
+      const logo =
+        document.createElement('img');
 
-    image.addEventListener(
-      'error',
-      () => {
-        if (
-          image.src !==
-          fallbackImage
-        ) {
-          image.src =
-            fallbackImage;
+      logo.src = fallbackLogo;
+      logo.alt = '';
+      logo.setAttribute(
+        'aria-hidden',
+        'true'
+      );
+      logo.className =
+        'lp-property-card__fallback-logo';
+
+      const fallbackTitle =
+        createElement(
+          'strong',
+          '',
+          'Photo à venir'
+        );
+
+      const fallbackText =
+        createElement(
+          'span',
+          '',
+          'Visuel en cours d’ajout'
+        );
+
+      fallback.append(
+        logo,
+        fallbackTitle,
+        fallbackText
+      );
+
+      visual.append(fallback);
+    };
+
+    if (product.image) {
+      const image =
+        document.createElement('img');
+
+      image.src = product.image;
+
+      image.alt =
+        product.name
+          ? `Photo de ${product.name}`
+          : 'Hébergement';
+
+      image.loading = 'lazy';
+      image.decoding = 'async';
+
+      image.addEventListener(
+        'error',
+        renderFallback,
+        {
+          once: true
         }
-      },
-      {
-        once: true
-      }
-    );
+      );
 
-    media.append(image);
+      visual.append(image);
+    } else {
+      renderFallback();
+    }
+
+    media.append(visual);
 
     if (product.hasPromotion) {
       const promotion =
