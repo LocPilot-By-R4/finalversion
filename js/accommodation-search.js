@@ -316,28 +316,19 @@
         'lp-property-card__price'
       );
 
+    const hasPrice =
+      Number(product.priceFrom) > 0;
+
     const price =
       createElement(
         'strong',
         '',
-        formatPrice(
-          product.priceFrom
-        )
+        hasPrice
+          ? `À partir de ${formatPrice(product.priceFrom)}`
+          : formatPrice(product.priceFrom)
       );
 
     priceBlock.append(price);
-
-    if (
-      Number(product.priceFrom) > 0
-    ) {
-      priceBlock.append(
-        createElement(
-          'small',
-          '',
-          'à partir de'
-        )
-      );
-    }
 
     if (
       Number.isInteger(
