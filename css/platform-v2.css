@@ -307,7 +307,7 @@ body{color:var(--ink);background:var(--white)}
 
 .lp-results-header p{
   margin:0;
-  color:#687c96;
+  color:var(--muted);
   font-size:12px;
   text-align:right;
 }
@@ -363,7 +363,7 @@ body{color:var(--ink);background:var(--white)}
   left:14px;
   padding:7px 10px;
   border-radius:999px;
-  background:#0aa5aa;
+  background:var(--gold);
   color:#fff;
   font-size:10px;
   font-weight:900;
@@ -382,7 +382,7 @@ body{color:var(--ink);background:var(--white)}
   flex-wrap:wrap;
   align-items:center;
   gap:7px;
-  color:#687c96;
+  color:var(--muted);
   font-size:10px;
   font-weight:800;
   text-transform:uppercase;
@@ -392,12 +392,12 @@ body{color:var(--ink);background:var(--white)}
 .lp-property-card__meta span+span:before{
   content:"•";
   margin-right:7px;
-  color:#0aa5aa;
+  color:var(--gold-dark);
 }
 
 .lp-property-card__title{
   margin:8px 0 18px;
-  color:#073b77;
+  color:var(--navy);
   font-family:var(--serif);
   font-size:21px;
   line-height:1.15;
@@ -419,14 +419,14 @@ body{color:var(--ink);background:var(--white)}
 }
 
 .lp-property-card__price strong{
-  color:#073b77;
+  color:var(--navy);
   font-size:18px;
   line-height:1.1;
 }
 
 .lp-property-card__price small{
   margin-top:3px;
-  color:#71839a;
+  color:var(--muted);
   font-size:9px;
 }
 
@@ -434,7 +434,7 @@ body{color:var(--ink);background:var(--white)}
   flex:0 0 auto;
   border:0;
   border-radius:9px;
-  background:#073d78;
+  background:var(--blue);
   color:#fff;
   padding:10px 12px;
   font:inherit;
@@ -448,7 +448,7 @@ body{color:var(--ink);background:var(--white)}
 }
 
 .lp-property-card__action:hover{
-  background:#0a559d;
+  background:var(--blue-dark);
   transform:translateY(-1px);
 }
 
