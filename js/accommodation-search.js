@@ -13,7 +13,7 @@
     );
 
   const fallbackImage = new URL(
-    '../images/platform/placeholder-hebergement-locpilot.svg',
+    '../images/placeholder-hebergement-locpilot.svg',
     script?.src || window.location.href
   ).href;
 
