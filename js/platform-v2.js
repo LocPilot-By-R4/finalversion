@@ -22,8 +22,33 @@ $$('[data-search-tab]').forEach(b=>b.addEventListener('click',()=>{$$('[data-sea
 // mobile search
 const shell=$('#searchShell');$('#mobileSearchTrigger')?.addEventListener('click',()=>{shell?.classList.add('is-open');document.body.classList.add('modal-open')});$('#searchClose')?.addEventListener('click',()=>{shell?.classList.remove('is-open');document.body.classList.remove('modal-open')});
 // popovers
-const popovers=['datePopover','guestPopover','activityPopover'];function togglePop(id){popovers.forEach(p=>{const el=document.getElementById(p);if(el&&p!==id)el.hidden=true});const el=document.getElementById(id);if(el)el.hidden=!el.hidden}
-$('#dateControl')?.addEventListener('click',()=>togglePop('datePopover'));$('#guestControl')?.addEventListener('click',()=>togglePop('guestPopover'));$('#activityControl')?.addEventListener('click',()=>togglePop('activityPopover'));
+const popovers=['datePopover','guestPopover','activityPopover'];
+const mobileSearchMedia=window.matchMedia('(max-width:980px)');
+function placePopover(id,trigger){
+  const el=document.getElementById(id);
+  if(!el)return null;
+  if(mobileSearchMedia.matches&&trigger?.parentNode){
+    trigger.insertAdjacentElement('afterend',el);
+  }else if(shell&&el.parentNode!==shell){
+    shell.appendChild(el);
+  }
+  return el;
+}
+function togglePop(id,trigger){
+  popovers.forEach(p=>{
+    const el=document.getElementById(p);
+    if(el&&p!==id)el.hidden=true;
+  });
+  const el=placePopover(id,trigger);
+  if(!el)return;
+  el.hidden=!el.hidden;
+  if(!el.hidden&&mobileSearchMedia.matches){
+    requestAnimationFrame(()=>el.scrollIntoView({block:'nearest',behavior:'smooth'}));
+  }
+}
+$('#dateControl')?.addEventListener('click',e=>togglePop('datePopover',e.currentTarget));
+$('#guestControl')?.addEventListener('click',e=>togglePop('guestPopover',e.currentTarget));
+$('#activityControl')?.addEventListener('click',e=>togglePop('activityPopover',e.currentTarget));
 let adults=2,children=0;function guestText(){const a=`${adults} ${adults===1?words.adult:words.adults}`;const c=`${children} ${children===1?words.child:words.children}`;return `${a}, ${c}`}
 $$('[data-count]').forEach(b=>b.addEventListener('click',()=>{const type=b.dataset.count,delta=Number(b.dataset.delta);if(type==='adults')adults=Math.min(20,Math.max(1,adults+delta));else children=Math.min(12,Math.max(0,children+delta));$('#adultCount')&&( $('#adultCount').textContent=adults);$('#childCount')&&( $('#childCount').textContent=children);$('#guestSummary')&&( $('#guestSummary').textContent=guestText())}));
 function dateSummary(){const a=$('#arrivalDate')?.value,d=$('#departureDate')?.value;if(!a&&!d)return words.dates;const f=s=>s?new Intl.DateTimeFormat(lang==='en'?'en-GB':lang==='es'?'es-ES':'fr-FR',{day:'2-digit',month:'short'}).format(new Date(s+'T12:00:00')):'…';return `${f(a)} – ${f(d)}`}
